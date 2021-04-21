@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+asgiref = "==3.3.1"
+pytz = "==2021.1"
+sqlparse = "==0.4.1"
+Django = "==3.1.7"
+psycopg2 = "==2.8.6"
+
+[dev-packages]
+pytest = "*"
+autopep8 = "*"
+pylint = "*"
+
+[requires]
+python_version = "3.9"

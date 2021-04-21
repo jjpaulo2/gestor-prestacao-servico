@@ -1,0 +1,30 @@
+services:
+
+  db:
+    container_name: postgres
+    restart: always
+    build: ./db
+    ports: 
+      - 5432:5432
+    environment: 
+      POSTGRES_PASSWORD: DbB6Kx8KQ6RL4nDR9Xp3
+      POSTGRES_USER: 8F6xNPtC8mdZ659acg8x
+      POSTGRES_DB: 3fRKfd2pfnqHrhuCCUNN
+    volumes: 
+      - ./db/data:/var/lib/postgresql/data
+  
+  web:
+    container_name: django
+    build: .
+    environment:
+      DATABASE_NAME: 3fRKfd2pfnqHrhuCCUNN
+      DATABASE_USER: 8F6xNPtC8mdZ659acg8x
+      DATABASE_PASSWORD: DbB6Kx8KQ6RL4nDR9Xp3
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+    ports: 
+      - 8888:8888
+    volumes: 
+      - ./project:/srv
+    depends_on:
+      - db

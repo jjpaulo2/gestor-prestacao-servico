@@ -1,5 +1,13 @@
+# Editores
 .vscode
+
+# Ambiente
 .env
 venv
+
+# Banco
 *.sqlite3
+db/data
+
+# Python
 __pycache__
